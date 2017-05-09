@@ -34,7 +34,7 @@ void PID::UpdateError(double cte) {
 
     p_error = cte_; 
     i_error = sum_cte_; 
-    d_error = cte_previous - cte_;
+    d_error = cte_ - cte_previous;
 
     std::cout<<"p_error: "<<p_error<<endl; 
     std::cout<<"d_error: "<<d_error<<endl;
@@ -44,9 +44,9 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
-    proportional = -Kp_ * p_error;
-    differential = -Kd_ * d_error;
-    integral = -Ki_ * i_error;
+    proportional = Kp_ * p_error;
+    differential = Kd_ * d_error;
+    integral = Ki_ * i_error;
 
     std::cout<<"proportional: "<<proportional<<endl; 
     std::cout<<"differential: "<<differential<<endl;

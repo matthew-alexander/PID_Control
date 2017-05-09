@@ -34,9 +34,9 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  double Kp = 0.0;
-  double Kd = 0.04;
-  double Ki = 1.0;  
+  double Kp = 0.1;
+  double Kd = 0.5;
+  double Ki = 0.00;  
   // double p_error = 0.000;
   // double dp_i = 0.00025;
   // double dp_d = 0.000;
@@ -76,7 +76,7 @@ int main()
           // std::cout<<"P_error: "<<p_error;
 
           // find steering angle 
-          steer_value = - pid.TotalError(); 
+          steer_value = -pid.TotalError(); 
 
           
 
