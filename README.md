@@ -17,6 +17,8 @@ The integral parameter attempts to compensate for sytematic bias in the vehicle.
 The final parameters were chosen by manual tuning through many iterations of watching the car and studying the python example of Sebastian Thrun. The final parameters that I have for a throttle of 0.4 are Kp = 0.09; Kd = 0.9; Ki = 0.004. 
 
 A video of the result can be seen below: 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ykg7dqplO6E" frameborder="0" allowfullscreen></iframe>
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://youtu.be/ykg7dqplO6E
+" target="_blank"><img src="http://img.youtube.com/vi/https://youtu.be/ykg7dqplO6E/0.jpg" 
+alt="Simulation Result" width="480" height="360" border="1" /></a>
 
