@@ -18,7 +18,7 @@ The final parameters were chosen by manual tuning through many iterations of wat
 
 A video of the result can be seen below: 
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://www.youtube.com/watch?v=ykg7dqplO6E" target="_blank"><img src="http://img.youtube.com/vi/https://youtu.be/ykg7dqplO6E/0.jpg" 
+<a href="https://youtu.be/ykg7dqplO6E" target="_blank"><img src="http://img.youtube.com/vi/ykg7dqplO6E/0.jpg" 
 alt="Simulation Result" width="480" height="360" border="1" /></a>
 
 or here: https://youtu.be/ykg7dqplO6E
