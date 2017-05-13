@@ -1,5 +1,7 @@
 #ifndef PID_H
 #define PID_H
+#include <vector>
+#include <uWS/uWS.h>
 
 class PID {
 public:
@@ -25,6 +27,8 @@ public:
   double proportional; 
   double differential; 
   double integral; 
+  std::vector<double> CTE_errors_;
+
 
 
   /*
@@ -51,6 +55,10 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  void twiddle();
+   
+  
 };
 
 #endif /* PID_H */

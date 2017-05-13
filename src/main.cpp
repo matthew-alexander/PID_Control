@@ -34,13 +34,14 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  double Kp = 0.1;
-  double Kd = 0.6;
-  double Ki = 0.002;  
+  double Kp = 0.09;
+  double Kd = 0.9;
+  double Ki = 0.004;  
   // double p_error = 0.000;
   // double dp_i = 0.00025;
   // double dp_d = 0.000;
- 
+  
+
   
   pid.Init(Kp, Ki, Kd);
 
@@ -69,7 +70,7 @@ int main()
 
           
 
-
+          
           // update the coefficients
           pid.UpdateError(cte); 
 
@@ -77,20 +78,28 @@ int main()
 
           // find steering angle 
           steer_value = -pid.TotalError(); 
-
           
-
-
+          // pid.twiddle(); 
+          
+          // this is an experimental feature that restarts the simulation if the error is to big
+          // the point would be to use twiddle to gather a new over all error for each run
+          // and then optimize to find the best parameters
+          // if(cte > 3){
+          //    std::string msg("42[\"reset\", {}]");
+          //    ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);  
+          // }
 
 
 
           
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
-
+          // std::cout << "Iterations: " << iterations << std::endl;
+          
+          
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-          msgJson["throttle"] = 0.3;
+          msgJson["throttle"] = 0.4;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
@@ -139,4 +148,16 @@ int main()
     return -1;
   }
   h.run();
+
+
+ 
 }
+
+//  void reset_simulator(uWS::WebSocket<uWS::SERVER>& ws)
+//     {
+//         // reset
+//         std::string msg("42[\"reset\", {}]");
+//         ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
+//     }
+
+
