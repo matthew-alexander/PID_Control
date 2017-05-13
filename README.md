@@ -1,5 +1,5 @@
 # PID_Control
-The goal of this project is to design a PID controller to movve a car around a track simulation in C++. 
+The goal of this project is to design a PID controller to move a car around a track simulation in C++. 
 
 
 ## The effect of parameters
@@ -11,9 +11,12 @@ The proportial parameter in effect controls how rapidly the outout adjusts to th
 
 The differential parameter does the job of decreasing the output as the cross check error becomes smaller through time. Thus, the effect is that as the car adjust back to the center of the road, the steering angle of the car decreases through time to "ease" into  a center lane position. There is still over overshooting, and there is still visible ocillations in the simultion. I found that that the parameter most successful was a Kd of 0.9. 
 
-The integral parameter attempts to compensate for sytematic bias in the vehicle. If there is a alighnment issue that is consistenly placing the car off ofhttps://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png center, this parameter uses the total sum of cross check error to compensate. The parameter I found to be most successful through hand tuning experiments, was 0.004. 
+The integral parameter attempts to compensate for sytematic bias in the vehicle. If there is a alighnment issue that is consistenly placing the car off of center, this parameter uses the total sum of cross check error to compensate. The parameter I found to be most successful through hand tuning experiments, was 0.004. 
 
 ## Final parameters
 The final parameters were chosen by manual tuning through many iterations of watching the car and studying the python example of Sebastian Thrun. The final parameters that I have for a throttle of 0.4 are Kp = 0.09; Kd = 0.9; Ki = 0.004. 
+
+A video of the result can be seen below: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ykg7dqplO6E" frameborder="0" allowfullscreen></iframe>
 
 
